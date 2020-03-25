@@ -1,0 +1,54 @@
+﻿@model WebAnalista.Models.Produtos
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<hr />
+<form method="post">
+    <label for="nome">Produto</label><br />
+    <input class="form-control" type="text" name="nome" placeholder="Informe o nome do Produto" value="@Model.Nome" />
+    @Html.ValidationMessage("Nome")
+
+    <br />
+    <label for="categoria">Categoria</label><br />
+    <input type="text" name="categoria" placeholder="Informe a categoria do Produto" value="@Model.Categoria" />
+    @Html.ValidationMessage("categoria")
+
+    <br />
+    <label for="categoria">Preço</label><br />
+    <input type="text" name="preco" placeholder="Informe o preço" value="@Model.Preco" />
+    @Html.ValidationMessage("preco")
+
+    <br />
+    <label for="aumento">Aumento</label><br />
+    <input type="text" name="aumento" placeholder="Informe o aumento do Produto" value="@Model.Aumento" />
+    @Html.ValidationMessage("aumento")
+
+    <br />
+    <label for="quantidade">Quantidade</label><br />
+    <input type="text" name="quantidade" placeholder="Informe a quantidade do Produto" value="@Model.Quantidade" />
+    @Html.ValidationMessage("quantidade")
+
+    <br />
+    <label for="saida">Quantidade de Saída</label><br />
+    <input type="text" name="saida" placeholder="Informe a quantidade do Produto" value="@Model.QuantidadeSaida" />
+    @Html.ValidationMessage("saida")
+
+    <br />
+    <label for="venda">Venda</label><br />
+    <input type="text" name="venda" value="@Model.CalcularVenda()" />
+
+        <br />
+        <label for="valorDoEstoque">Valor do Estoque</label><br />
+        <input type="text" name="valorDoEstoque" value="@Model.CalcularValorDoEstoque().ToString("F2")" />
+
+        <br />
+        <label for="estqoue">Total em Estoque</label><br />
+        <input type="text" name="QuantidadeSaida" value="@Model.ResultadoEstoque" />
+  
+
+    <input type="submit" vaue="Enviar" />
+    <br />
+</form>
+
